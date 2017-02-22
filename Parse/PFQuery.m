@@ -570,9 +570,9 @@ static void PFQueryAssertValidOrderingClauseClass(id object) {
             }
             case NSOrPredicateType: {
                 NSMutableArray *subqueries = [NSMutableArray arrayWithCapacity:compound.subpredicates.count];
-                if (compound.subpredicates.count > 4) {
-                    PFConsistencyAssertionFailure(@"This query is too complex. It had an OR with >4 subpredicates after normalization.");
-                }
+//                if (compound.subpredicates.count > 4) {
+//                    PFConsistencyAssertionFailure(@"This query is too complex. It had an OR with >4 subpredicates after normalization.");
+//                }
                 for (NSPredicate *subpredicate in compound.subpredicates) {
                     [subqueries addObject:[self queryWithClassName:className normalizedPredicate:subpredicate]];
                 }
